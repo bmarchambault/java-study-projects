@@ -72,6 +72,18 @@ return new String (password);
 
 }
 
+//CHANGE THE PASSWORD:
+    public void changePassword(String password){
+        this.password = password;
+    }
+
+public String showInfo(){
+        return "DISPLAY NAME: " + firstName + " " + lastName +
+                " COMPANY EMAIL: " + email +
+                " MAILBOX CAPACITY: " + mailboxCapacity + "mb";
+}
+
+
     public String getFirstName() {
         return firstName;
     }
