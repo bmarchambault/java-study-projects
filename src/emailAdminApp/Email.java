@@ -9,7 +9,10 @@ public class Email {
     private String department;
     private int mailboxCapacity;
     private String alternateEmail;
-    private int defaultPasswordLength;
+    private int defaultPasswordLength = 10;
+    private String email;
+    //suffix can be anything
+    private String companySuffix = "company.com";
 
     public Email (){};
 
@@ -26,6 +29,11 @@ public class Email {
         //CALL A METHOD THAT RETURNS A RANDOM PASSWORD:
         this.password = randomPassword(defaultPasswordLength);
         System.out.println("Your password is: " + this.password);
+
+        //COMBINE ELEMENTS TO GENERATE AN EMAIL
+        email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
+        System.out.println("Your email is: " + email);
+
     }
 
 //    ASK FOR DEPARTMENT
@@ -49,7 +57,7 @@ private String randomPassword(int length){
         //int length will determine how long our password needs to be
     //defining which characters to choose from to generate a password:
     //this is the array of characters to iterate through
-        String passwordSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*";
+        String passwordSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*";
         //this is the password.  a new sequence of characters of the size of length.
     char[] password = new char[length];
     //iteration as many times as the length of the password needs to be - determined by the parameter
@@ -59,7 +67,7 @@ private String randomPassword(int length){
         //password character at ith iteration equals a random character from passwordSet
         password[i] = passwordSet.charAt(random);
     }
-    //casting a single character into a string of characters:
+    //casting a set of characters in the character array into a string of characters:
 return new String (password);
 
 }
@@ -110,5 +118,29 @@ return new String (password);
 
     public void setAlternateEmail(String alternateEmail) {
         this.alternateEmail = alternateEmail;
+    }
+
+    public int getDefaultPasswordLength() {
+        return defaultPasswordLength;
+    }
+
+    public void setDefaultPasswordLength(int defaultPasswordLength) {
+        this.defaultPasswordLength = defaultPasswordLength;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCompanySuffix() {
+        return companySuffix;
+    }
+
+    public void setCompanySuffix(String companySuffix) {
+        this.companySuffix = companySuffix;
     }
 }
