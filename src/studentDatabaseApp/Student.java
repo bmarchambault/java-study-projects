@@ -6,17 +6,17 @@ public class Student {
     private String firstName;
     private String lastName;
     private int gradeLevel;
-    private int tuitionBalance;
+    private int tuitionBalance = 0;
     private String studentID;
     private String courses;
     //these properties belong to all student objects, not the instantiation of each student.
-    private static int tuition = 600;
+    private static int costOfCourse = 600;
     private static int id = 1000;
 
+    Scanner scan = new Scanner(System.in);
 
     //CONSTRUCTOR THAT PROMPTS TO ENTER NAME AND YEAR
     public Student (){
-        Scanner scan = new Scanner(System.in);
         System.out.println("Enter the students first name: ");
         this.firstName = scan.nextLine();
 
@@ -29,6 +29,7 @@ public class Student {
 
         setStudentID();
         System.out.println(firstName + " " + lastName + " grade level: " + gradeLevel + ", " + "Student Id: " + studentID);
+
     }
 
     //GENERATE AN ID
@@ -39,10 +40,21 @@ public class Student {
     }
 
     //ENROLL IN COURSES
-
-    //VIEW BALANCE
-
-    //PAY TUITION
+    public void enroll(){
+        // get inside a do while loop and user hits 0 to continue adding classes
+        do {
+            System.out.print("Enter course name to enroll. (Q/q to quit): ");
+            String course = scan.nextLine();
+            if (!course.equalsIgnoreCase("Q")) {
+                courses = courses + "\n" + course;
+                tuitionBalance = tuitionBalance + costOfCourse;
+            } else {
+                break;
+            }
+        } while (1!=0);
+            System.out.println("Enrolled in: " + courses);
+            System.out.println("Tuition balance: " + tuitionBalance);
+    }
 
     //SHOW STATUS
 
