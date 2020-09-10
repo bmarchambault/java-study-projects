@@ -8,7 +8,8 @@ public class Student {
     private int gradeLevel;
     private int tuitionBalance = 0;
     private String studentID;
-    private String courses;
+    //need to initialize so courses won't be null
+    private String courses = "";
     //these properties belong to all student objects, not the instantiation of each student.
     private static int costOfCourse = 600;
     private static int id = 1000;
@@ -25,8 +26,6 @@ public class Student {
         System.out.println("1 - Never attended college and 1st year undergraduate/Freshman\n2 - Attended college before and 1st year undergraduate/Freshman\n3 - 2nd year undergraduate/sophomore\n4 - 3rd year undergraduate/junior\n5 - 4th year undergraduate/senior\nEnter students grade level");
         this.gradeLevel = scan.nextInt();
 
-//        System.out.println(firstName + " " + lastName + " grade level: " + gradeLevel);
-
         setStudentID();
         System.out.println(firstName + " " + lastName + " grade level: " + gradeLevel + ", " + "Student Id: " + studentID);
 
@@ -41,19 +40,49 @@ public class Student {
 
     //ENROLL IN COURSES
     public void enroll(){
+        //this clears the scanner of any whitespace so the first sout of the do/while doesn't print twice.
+//        String quit = courses.equalsIgnoreCase("q");
+        scan.nextLine();
         // get inside a do while loop and user hits 0 to continue adding classes
+        boolean quit = false;
         do {
-            System.out.print("Enter course name to enroll. (Q/q to quit): ");
+            System.out.println("Enter course code to enroll (Q/q to quit):\nCourse codes:  M101 - Mathematics 101\nH101 - History 101\nE101 - English 101\nCh101 - Chemistry 101\nCS101 - Computer Science 101");
             String course = scan.nextLine();
-            if (!course.equalsIgnoreCase("Q")) {
-                courses = courses + "\n" + course;
-                tuitionBalance = tuitionBalance + costOfCourse;
-            } else {
-                break;
-            }
-        } while (1!=0);
+            switch (course) {
+                case "M101":
+                case "H101":
+                case "E101":
+                case "Ch101":
+                case "CS101":
+                case "m101":
+                case "h101":
+                case "e101":
+                case "ch101":
+                case "cs101":
+                case "Cs101":
+                    courses = courses + "\n" + course;
+                    tuitionBalance += costOfCourse;
+                    quit = false;
+                    break;
+                default:
+                    quit = true;
+                    break;
+                }
             System.out.println("Enrolled in: " + courses);
             System.out.println("Tuition balance: " + tuitionBalance);
+        } while (quit == false);
+
+    }
+
+    //VIEW BALANCE
+public String viewTuitionBalance(){
+        return "Tuition balance: " + tuitionBalance;
+}
+    //PAY TUITION
+    public String payTuition(){
+        System.out.println("Please enter the amount you'd like to pay: ");
+        int payment = scan.nextInt();
+        return"Your new tuition balance is: " + (tuitionBalance - payment);
     }
 
     //SHOW STATUS
