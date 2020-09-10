@@ -68,25 +68,32 @@ public class Student {
                     quit = true;
                     break;
                 }
-            System.out.println("Enrolled in: " + courses);
-            System.out.println("Tuition balance: " + tuitionBalance);
+//            System.out.println("Enrolled in: " + courses);
+
         } while (quit == false);
 
     }
 
     //VIEW BALANCE
-public String viewTuitionBalance(){
-        return "Tuition balance: " + tuitionBalance;
+public void viewTuitionBalance(){
+        System.out.println("Tuition balance: $" + tuitionBalance + ".00");
+//        return "Tuition balance: " + tuitionBalance;
 }
     //PAY TUITION
-    public String payTuition(){
+    public void payTuition() {
         System.out.println("Please enter the amount you'd like to pay: ");
         int payment = scan.nextInt();
-        return"Your new tuition balance is: " + (tuitionBalance - payment);
+        tuitionBalance -= payment;
+        System.out.println("Thank you for your payment of $" + payment + ".00.");
+        viewTuitionBalance();
     }
 
-    //SHOW STATUS
-
-
-
+    //SHOW STATUS - COULD ALSO USE THE "TO STRING METHOD"
+    public String showInfo() {
+        return "Name: "  + firstName + " " + lastName + '\n' +
+                "Student ID: " + studentID + '\n' +
+                "Grade Level: " + gradeLevel + "\n" +
+                "Currently Enrolled Courses: " + "  " + courses + '\n' +
+                "Tuition Balance: $" + tuitionBalance + ".00.";
+    }
 }
