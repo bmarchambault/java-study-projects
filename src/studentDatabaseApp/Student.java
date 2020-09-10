@@ -1,2 +1,4 @@
-package studentDatabaseApp;public class Student {
+package studentDatabaseApp;
+
+public class Student {
 }
