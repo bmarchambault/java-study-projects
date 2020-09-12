@@ -1,0 +1,15 @@
+Banking application should:
+- Read a .csv file of names, ssn, account type, and initial deposit
+- Use a proper data structure to hold all these accounts
+- Both savings and checking accounts share the following properties:
+    desosit()
+    withdraw()
+    tranfer()
+    showInfo()
+    11-digit account number (generated with the following process:  1 or 2 depending on Savings or Checking, last 2 digits of SSN, unique 5-digit number, and a random 3-digit number)
+
+- Savings account holders are given a Safety Deposit Box, identified by a 3-digit number and accessed with a 4-digit code
+- Checking account holders are assigned a Debit Card with a 12-digit number and a 4-digit PIN
+- Both accounts will us an interface that determines the base interest rate.
+  Checking accounts will use %15 of the base rate
+- The showInfo method should reveal relevant account information as well as information specific to the Checking account or Savings account.
