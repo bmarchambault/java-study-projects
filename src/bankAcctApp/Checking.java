@@ -1,2 +1,4 @@
-package bankAcctApp;public class Checking {
+package bankAcctApp;
+
+public class Checking extends Account{
 }
