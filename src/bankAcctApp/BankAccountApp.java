@@ -1,2 +1,4 @@
-package bankAcctApp;public class BankAccountApp {
+package bankAcctApp;
+
+public class BankAccountApp {
 }
