@@ -1,4 +1,6 @@
 package bankAcctApp;
 
-public interface iBaseRate {
+public interface IRate {
+
+
 }
