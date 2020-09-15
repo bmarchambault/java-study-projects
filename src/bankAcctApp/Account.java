@@ -23,12 +23,16 @@ public Account (String name, String sSN, double initDeposit){
     //*****set account number:*******
     //increase index each time an account is created
     index++;
-    //call this method
+    //call common methods
     this.accountNumber = setAcctNum();
+    setRate();
 
 }
+//a method that forces classes to implement this method.
+public abstract void setRate();
+
+
     //list common methods
-    //1. account number
     private String setAcctNum(){
     //grab last two number of the SSN
     String lastTwoOfSSN = sSN.substring(sSN.length()-2, sSN.length() );
@@ -42,7 +46,8 @@ public Account (String name, String sSN, double initDeposit){
         System.out.println(
                 "NAME: " + name + "\n" +
                 "ACCOUNT NUMBER: " + accountNumber + "\n" +
-                "BALANCE: " + balance
+                "BALANCE: " + balance + "\n" +
+                "RATE: " + rate + "%"
         );
     }
 
