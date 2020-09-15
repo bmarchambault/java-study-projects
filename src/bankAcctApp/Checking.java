@@ -10,8 +10,7 @@ int debitCardPin;
 
 public Checking(String name, String sSN, double initDeposit){
     super(name, sSN, initDeposit);
-    System.out.println("new checking account");
-    System.out.println("Name: " + name);
+
 }
 
     @Override
