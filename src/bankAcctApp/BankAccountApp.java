@@ -9,5 +9,8 @@ public class BankAccountApp {
 
         Savings sAcct1 = new Savings("Bob Dillon", "999448888", 2500);
 
+        cAcct1.showInfo();
+        System.out.println("*************************");
+        sAcct1.showInfo();
     }
 }

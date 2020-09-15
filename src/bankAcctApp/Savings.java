@@ -9,8 +9,17 @@ int safetyDepositBoxKey;
 
     public Savings ( String name, String sSN, double initDeposit){
         super(name, sSN, initDeposit);
+        //1 indicated this a checking - do the same for the savings.
+        accountNumber = "1" + accountNumber;
 
 
+    }
+    //list methods specific
+    //example of polymorphism
+    @Override
+    public void showInfo() {
+        super.showInfo();
+        System.out.println("ACCOUNT TYPE: Savings");
     }
 
     @Override
@@ -18,7 +27,7 @@ int safetyDepositBoxKey;
         return 15;
     }
 
-    //list methods specific
+
 
 
 
