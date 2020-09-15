@@ -10,8 +10,15 @@ int debitCardPin;
 
 public Checking(String name, String sSN, double initDeposit){
     super(name, sSN, initDeposit);
+    accountNumber = "2" + accountNumber;
 
 }
+
+    @Override
+    public void showInfo() {
+        super.showInfo();
+        System.out.println("ACCOUNT TYPE: Checking");
+    }
 
     @Override
     public int baseRate() {
