@@ -4,8 +4,8 @@ public class Checking extends Account{
     //list properties are specific to a checking account
         //debit card
         //pin etc...
-long debitCardNum;
-int debitCardPin;
+private long debitCardNum;
+private int debitCardPin;
 
     //constructor to initialize the checking account properties
 public Checking(String name, String sSN, double initDeposit){
