@@ -7,12 +7,20 @@ public class Checking extends Account{
 long debitCardNum;
 int debitCardPin;
 
-
+    //constructor to initialize the checking account properties
 public Checking(String name, String sSN, double initDeposit){
     super(name, sSN, initDeposit);
     accountNumber = "2" + accountNumber;
     setDebitCard();
 }
+
+
+    //list methods specific
+    @Override
+    public void setRate() {
+    rate = getBaseRate() * .15;
+    }
+
     private void setDebitCard(){
         //casting as an in truncates the random number.
         debitCardNum = (long) (Math.random() * Math.pow(10, 12));
@@ -30,16 +38,13 @@ public Checking(String name, String sSN, double initDeposit){
         );
     }
 
-    @Override
-    public int baseRate() {
-        return 0;
     }
 
 
-    //constructor to initialize the checking account properties
-
-    //list methods specific
 
 
 
-}
+
+
+
+
