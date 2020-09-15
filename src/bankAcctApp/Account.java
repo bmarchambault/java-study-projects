@@ -25,7 +25,7 @@ public Account (String name, String sSN, double initDeposit){
     index++;
     //call this method
     this.accountNumber = setAcctNum();
-    System.out.println("ACCOUNT NUMBER: " + this.accountNumber);
+
 }
     //list common methods
     //1. account number
@@ -36,6 +36,14 @@ public Account (String name, String sSN, double initDeposit){
     int uniqueID = index;
     int randomNum = (int) (Math.random() * Math.pow(10, 3));
             return lastTwoOfSSN + uniqueID + randomNum;
+    }
+
+    public void showInfo(){
+        System.out.println(
+                "NAME: " + name + "\n" +
+                "ACCOUNT NUMBER: " + accountNumber + "\n" +
+                "BALANCE: " + balance
+        );
     }
 
 }
