@@ -41,6 +41,27 @@ public abstract void setRate();
     int randomNum = (int) (Math.random() * Math.pow(10, 3));
             return lastTwoOfSSN + uniqueID + randomNum;
     }
+public void deposit(double amount){
+        balance = balance + amount;
+    System.out.println("depositing $" + amount );
+    printBalance();
+};
+
+public void withdraw(double amount){
+    balance = balance - amount;
+    System.out.println("Withdrawing $" + amount );
+    printBalance();
+};
+
+public void transfer(String toWhere, double amount){
+  balance = balance-amount;
+    System.out.println("Transfering $" + amount + " to " + toWhere);
+    printBalance();
+};
+
+public void printBalance (){
+    System.out.println("Your balance is now: $" + balance);
+}
 
     public void showInfo(){
         System.out.println(
