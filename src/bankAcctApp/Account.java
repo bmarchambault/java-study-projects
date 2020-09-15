@@ -41,6 +41,15 @@ public abstract void setRate();
     int randomNum = (int) (Math.random() * Math.pow(10, 3));
             return lastTwoOfSSN + uniqueID + randomNum;
     }
+
+    public void compound(){
+        //divide the rate by 100 because rate comes as a fraction.
+        double accruedInterest = balance * (rate/100);
+        System.out.println("Accrued Interest: $" + accruedInterest);
+        balance = balance + accruedInterest;
+        printBalance();
+    }
+
 public void deposit(double amount){
         balance = balance + amount;
     System.out.println("depositing $" + amount );

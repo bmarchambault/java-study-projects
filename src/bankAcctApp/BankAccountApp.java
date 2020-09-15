@@ -13,8 +13,6 @@ public class BankAccountApp {
         System.out.println("*************************");
         sAcct1.showInfo();
 
-        sAcct1.deposit(5000);
-        sAcct1.withdraw(200);
-        sAcct1.transfer("Brokerage", 3000);
+        sAcct1.compound();
     }
 }
