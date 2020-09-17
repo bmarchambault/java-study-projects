@@ -1,4 +1,4 @@
-package emailAdminApp;
+package Udemy_course_projects.bankAcctApp.emailAdminApp;
 
 public class EmailApp {
     public static void main(String[] args) {

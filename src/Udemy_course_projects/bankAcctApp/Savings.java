@@ -1,4 +1,4 @@
-package bankAcctApp;
+package Udemy_course_projects.bankAcctApp;
 
 public class Savings extends Account {
     //list properties are specific to a savings account

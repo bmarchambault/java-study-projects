@@ -1,4 +1,4 @@
-package studentDatabaseApp;
+package Udemy_course_projects.bankAcctApp.studentDatabaseApp;
 
 import java.util.Scanner;
 

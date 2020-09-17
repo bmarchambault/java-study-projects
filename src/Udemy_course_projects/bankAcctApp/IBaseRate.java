@@ -1,4 +1,4 @@
-package bankAcctApp;
+package Udemy_course_projects.bankAcctApp;
 
 public interface IBaseRate {
  // write a method that returns a base rate

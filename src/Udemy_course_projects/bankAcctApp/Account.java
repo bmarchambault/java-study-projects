@@ -1,4 +1,4 @@
-package bankAcctApp;
+package Udemy_course_projects.bankAcctApp;
 
 public abstract class Account implements IBaseRate {
     //cant create object from here

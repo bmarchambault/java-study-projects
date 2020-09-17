@@ -1,4 +1,4 @@
-package emailAdminApp;
+package Udemy_course_projects.bankAcctApp.emailAdminApp;
 
 import java.util.Scanner;
 

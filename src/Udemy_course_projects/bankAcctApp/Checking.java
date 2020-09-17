@@ -1,4 +1,4 @@
-package bankAcctApp;
+package Udemy_course_projects.bankAcctApp;
 
 public class Checking extends Account{
     //list properties are specific to a checking account

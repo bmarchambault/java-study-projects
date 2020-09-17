@@ -1,6 +1,4 @@
-package bankAcctApp;
-
-import jdk.swing.interop.SwingInterOpUtils;
+package Udemy_course_projects.bankAcctApp;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -23,7 +21,7 @@ public class BankAccountApp {
 
         //read a csv file and create accounts based on that data
         //this file could be located anywhere.
-        String file = "src/files/NewBankAccounts.csv";
+        String file = "src/Udemy_course_projects/bankAcctApp/files/NewBankAccounts.csv";
         List<String[]> newAccountHolders = utilities.CSV.read(file);
         for (String[] accountHolder : newAccountHolders) {
 
